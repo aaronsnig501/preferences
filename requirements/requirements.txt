@@ -1,3 +1,4 @@
-sanic==24.6.0
-tortoise-orm==0.21.7
 asyncmy==0.2.9
+sanic==24.6.0
+sanic-ext==23.12.0
+tortoise-orm==0.21.7
