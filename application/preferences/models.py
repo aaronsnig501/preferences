@@ -8,6 +8,7 @@ class Preferences(Model):
     part_of_speech_tagger = CharField(max_length=15)
     to_language = CharField(max_length=5)
     from_language = CharField(max_length=5)
+    client_id = CharField(max_length=50)
 
     def __str__(self) -> str:
         return (
