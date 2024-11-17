@@ -6,8 +6,10 @@ from sanic.response import BaseHTTPResponse as SanicResponse
 from tortoise.contrib.sanic import register_tortoise
 
 from application.ping.controllers import bp as ping_blueprint
+from application.preferences.controllers import bp as preferences_blueprint
 
 from application.ping.managers import PingManager
+from application.preferences.manager import PreferencesManager
 from config.loader import load_config
 
 app = Sanic("nlp")
@@ -27,6 +29,9 @@ app.config.FALLBACK_ERROR_FORMAT = "json"
 
 app.blueprint(ping_blueprint)
 app.ext.dependency(PingManager())
+
+app.blueprint(preferences_blueprint)
+app.ext.dependency(PreferencesManager())
 
 
 @app.middleware("request")
